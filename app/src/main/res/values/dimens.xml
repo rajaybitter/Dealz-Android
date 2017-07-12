@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="top_deal_name_text_size">15sp</dimen>
+    <dimen name="top_deals_padding">50dp</dimen>
+    <dimen name="top_deals_item_width">120dp</dimen>
+    <dimen name="top_deals_item_height">130dp</dimen>
+    <dimen name="top_deals_image_height">100dp</dimen>
+    <dimen name="top_deals_item_margin">10dp</dimen>
+</resources>

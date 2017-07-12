@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Dealz</string>
+    <string name="sign_in">Sign-In</string>
+    <string name="update_profile">Update Profile</string>
+    <string name="profile">Profile</string>
+    <string name="top_dealz">Top Dealz</string>
+    <string name="results">Results</string>
+</resources>

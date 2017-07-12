@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "702079759696",
+    "firebase_url": "https://dealz-e3bcd.firebaseio.com",
+    "project_id": "dealz-e3bcd",
+    "storage_bucket": "dealz-e3bcd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:702079759696:android:ea2f3ce518ea1131",
+        "android_client_info": {
+          "package_name": "com.jm.jengo.dealz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "702079759696-8tmb26bnhcdkpqhvaf0j1ue605i2n12v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jm.jengo.dealz",
+            "certificate_hash": "ee31690682a7c52a3ccafb7b6342502a4e23128a"
+          }
+        },
+        {
+          "client_id": "702079759696-o6n0u1668m92onnnbi7ggbcu5pjfhjs9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDO4vZbWhvJhgCTnj0-cCJ1nRyubsrXoF4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "702079759696-o6n0u1668m92onnnbi7ggbcu5pjfhjs9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
