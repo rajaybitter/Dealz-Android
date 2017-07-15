@@ -11,96 +11,117 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.jm.jengo.dealz.R;
+import com.jm.jengo.dealz.classes.SaleItem;
+import com.jm.jengo.dealz.utilities.SearchResultRecyclerViewAdapter;
 
-/**
- * A fragment representing a list of Items.
- * <p/>
- * Activities containing this fragment MUST implement the {@link OnListFragmentInteractionListener}
- * interface.
- */
+import java.util.ArrayList;
+
+
 public class SearchResultFragment extends Fragment {
 
-    // TODO: Customize parameter argument names
-    private static final String ARG_COLUMN_COUNT = "column-count";
-    // TODO: Customize parameters
-    private int mColumnCount = 1;
-    private OnListFragmentInteractionListener mListener;
+    private static final String TAG = "SearchResultFragment";
+    private ArrayList<SaleItem> tempData = new ArrayList<>();
+    private RecyclerView recyclerView;
+    private SearchResultRecyclerViewAdapter adapter;
 
-    /**
-     * Mandatory empty constructor for the fragment manager to instantiate the
-     * fragment (e.g. upon screen orientation changes).
-     */
     public SearchResultFragment() {
-    }
-
-    // TODO: Customize parameter initialization
-    @SuppressWarnings("unused")
-    public static SearchResultFragment newInstance(int columnCount) {
-        SearchResultFragment fragment = new SearchResultFragment();
-        Bundle args = new Bundle();
-        args.putInt(ARG_COLUMN_COUNT, columnCount);
-        fragment.setArguments(args);
-        return fragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        if (getArguments() != null) {
-            mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
-        }
+        tempData.add(new SaleItem("Car", 19.50f, "THis is a car"));
+        tempData.add(new SaleItem("Boat", 19.40f, "THis is a car"));
+        tempData.add(new SaleItem("Rat", 19.50f, "THis is a car"));
+        tempData.add(new SaleItem("Jims", 19.50f, "THis is a car"));
+        tempData.add(new SaleItem("Cops", 19.50f, "THis is a car"));
+        tempData.add(new SaleItem("Tanks", 19.70f, "THis is a car"));
+        tempData.add(new SaleItem("Romper", 19.90f, "THis is a car"));
+        tempData.add(new SaleItem("plomp", 19.51f, "THis is a car"));
+        tempData.add(new SaleItem("trunf", 19.60f, "THis is a car"));
+        tempData.add(new SaleItem("idk", 19.50f, "THis is a car"));
+        tempData.add(new SaleItem("Cops", 19.50f, "THis is a car"));
+        tempData.add(new SaleItem("Tanks", 19.70f, "THis is a car"));
+        tempData.add(new SaleItem("Romper", 19.90f, "THis is a car"));
+        tempData.add(new SaleItem("Boat", 19.40f, "THis is a car"));
+        tempData.add(new SaleItem("Rat", 19.50f, "THis is a car"));
+        tempData.add(new SaleItem("Jims", 19.50f, "THis is a car"));
+        tempData.add(new SaleItem("Cops", 19.50f, "THis is a car"));
+        tempData.add(new SaleItem("Tanks", 19.70f, "THis is a car"));
+        tempData.add(new SaleItem("Romper", 19.90f, "THis is a car"));
+        tempData.add(new SaleItem("plomp", 19.51f, "THis is a car"));
+        tempData.add(new SaleItem("Car", 19.50f, "THis is a car"));
+        tempData.add(new SaleItem("Boat", 19.40f, "THis is a car"));
+        tempData.add(new SaleItem("Rat", 19.50f, "THis is a car"));
+        tempData.add(new SaleItem("Jims", 19.50f, "THis is a car"));
+        tempData.add(new SaleItem("Cops", 19.50f, "THis is a car"));
+        tempData.add(new SaleItem("Tanks", 19.70f, "THis is a car"));
+        tempData.add(new SaleItem("Romper", 19.90f, "THis is a car"));
+        tempData.add(new SaleItem("plomp", 19.51f, "THis is a car"));
+        tempData.add(new SaleItem("trunf", 19.60f, "THis is a car"));
+        tempData.add(new SaleItem("idk", 19.50f, "THis is a car"));
+        tempData.add(new SaleItem("Cops", 19.50f, "THis is a car"));
+        tempData.add(new SaleItem("Tanks", 19.70f, "THis is a car"));
+        tempData.add(new SaleItem("Romper", 19.90f, "THis is a car"));
+        tempData.add(new SaleItem("Boat", 19.40f, "THis is a car"));
+        tempData.add(new SaleItem("Rat", 19.50f, "THis is a car"));
+        tempData.add(new SaleItem("Jims", 19.50f, "THis is a car"));
+        tempData.add(new SaleItem("Cops", 19.50f, "THis is a car"));
+        tempData.add(new SaleItem("Tanks", 19.70f, "THis is a car"));
+        tempData.add(new SaleItem("Romper", 19.90f, "THis is a car"));
+        tempData.add(new SaleItem("plomp", 19.51f, "THis is a car"));
+        tempData.add(new SaleItem("Car", 19.50f, "THis is a car"));
+        tempData.add(new SaleItem("Boat", 19.40f, "THis is a car"));
+        tempData.add(new SaleItem("Rat", 19.50f, "THis is a car"));
+        tempData.add(new SaleItem("Jims", 19.50f, "THis is a car"));
+        tempData.add(new SaleItem("Cops", 19.50f, "THis is a car"));
+        tempData.add(new SaleItem("Tanks", 19.70f, "THis is a car"));
+        tempData.add(new SaleItem("Romper", 19.90f, "THis is a car"));
+        tempData.add(new SaleItem("plomp", 19.51f, "THis is a car"));
+        tempData.add(new SaleItem("trunf", 19.60f, "THis is a car"));
+        tempData.add(new SaleItem("idk", 19.50f, "THis is a car"));
+        tempData.add(new SaleItem("Cops", 19.50f, "THis is a car"));
+        tempData.add(new SaleItem("Tanks", 19.70f, "THis is a car"));
+        tempData.add(new SaleItem("Romper", 19.90f, "THis is a car"));
+        tempData.add(new SaleItem("Boat", 19.40f, "THis is a car"));
+        tempData.add(new SaleItem("Rat", 19.50f, "THis is a car"));
+        tempData.add(new SaleItem("Jims", 19.50f, "THis is a car"));
+        tempData.add(new SaleItem("Cops", 19.50f, "THis is a car"));
+        tempData.add(new SaleItem("Tanks", 19.70f, "THis is a car"));
+        tempData.add(new SaleItem("Romper", 19.90f, "THis is a car"));
+        tempData.add(new SaleItem("plomp", 19.51f, "THis is a car"));
+        tempData.add(new SaleItem("Car", 19.50f, "THis is a car"));
+        tempData.add(new SaleItem("Boat", 19.40f, "THis is a car"));
+        tempData.add(new SaleItem("Rat", 19.50f, "THis is a car"));
+        tempData.add(new SaleItem("Jims", 19.50f, "THis is a car"));
+        tempData.add(new SaleItem("Cops", 19.50f, "THis is a car"));
+        tempData.add(new SaleItem("Tanks", 19.70f, "THis is a car"));
+        tempData.add(new SaleItem("Romper", 19.90f, "THis is a car"));
+        tempData.add(new SaleItem("plomp", 19.51f, "THis is a car"));
+        tempData.add(new SaleItem("trunf", 19.60f, "THis is a car"));
+        tempData.add(new SaleItem("idk", 19.50f, "THis is a car"));
+        tempData.add(new SaleItem("Cops", 19.50f, "THis is a car"));
+        tempData.add(new SaleItem("Tanks", 19.70f, "THis is a car"));
+        tempData.add(new SaleItem("Romper", 19.90f, "THis is a car"));
+        tempData.add(new SaleItem("Boat", 19.40f, "THis is a car"));
+        tempData.add(new SaleItem("Rat", 19.50f, "THis is a car"));
+        tempData.add(new SaleItem("Jims", 19.50f, "THis is a car"));
+        tempData.add(new SaleItem("Cops", 19.50f, "THis is a car"));
+        tempData.add(new SaleItem("Tanks", 19.70f, "THis is a car"));
+        tempData.add(new SaleItem("Romper", 19.90f, "THis is a car"));
+        tempData.add(new SaleItem("plomp", 19.51f, "THis is a car"));
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_item_list2, container, false);
+        View view = inflater.inflate(R.layout.search_result_fragment, container, false);
+        recyclerView = (RecyclerView)view.findViewById(R.id.search_deals_layout);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        adapter = new SearchResultRecyclerViewAdapter(tempData);
+        recyclerView.setAdapter(adapter);
 
-        // Set the adapter
-        if (view instanceof RecyclerView) {
-            Context context = view.getContext();
-            RecyclerView recyclerView = (RecyclerView) view;
-            if (mColumnCount <= 1) {
-                recyclerView.setLayoutManager(new LinearLayoutManager(context));
-            } else {
-                recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
-            }
-//            recyclerView.setAdapter(new SearchResultRecyclerViewAdapter(DummyContent.ITEMS, mListener));
-        }
         return view;
     }
 
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnListFragmentInteractionListener) {
-            mListener = (OnListFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnListFragmentInteractionListener");
-        }
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }
-
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p/>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
-    public interface OnListFragmentInteractionListener {
-        // TODO: Update argument type and name
-//        void onListFragmentInteraction(DummyItem item);
-    }
 }

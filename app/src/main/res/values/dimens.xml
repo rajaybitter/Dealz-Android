@@ -5,6 +5,6 @@
     <dimen name="top_deals_padding">50dp</dimen>
     <dimen name="top_deals_item_width">120dp</dimen>
     <dimen name="top_deals_item_height">130dp</dimen>
-    <dimen name="top_deals_image_height">100dp</dimen>
-    <dimen name="top_deals_item_margin">10dp</dimen>
+    <dimen name="top_deals_image_height">80dp</dimen>
+    <dimen name="top_deals_item_margin">5dp</dimen>
 </resources>

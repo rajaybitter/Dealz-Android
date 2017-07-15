@@ -16,6 +16,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:scaleType="fitCenter"
+            android:layout_marginRight="5dp"
             android:src = "@drawable/test_image"
             android:id="@+id/search_item_image"
             android:layout_weight="1"/>
@@ -31,12 +32,14 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/search_item_name"
                 tools:text= "This is the text name"
+                android:layout_marginBottom="10dp"
                 android:maxLines="1"
                 android:ellipsize="end"/>
 
             <android.support.v7.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 tools:text = "This is the item description"
                 android:id="@+id/search_item_description"
                 android:maxLines="4"
@@ -47,6 +50,7 @@
                 android:layout_height="wrap_content"
                 tools:text="Price"
                 android:id="@+id/search_item_price" />
+
         </LinearLayout>
 
     </LinearLayout>

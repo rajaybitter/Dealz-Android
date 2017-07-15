@@ -18,7 +18,7 @@
 
         <activity android:name="com.jm.jengo.dealz.activities.ProfileActivity" />
 
-        <activity android:name="com.jm.jengo.dealz.activities.UpdateProfileActivity"></activity>
+        <activity android:name="com.jm.jengo.dealz.activities.UpdateProfileActivity"/>
 
     </application>
 

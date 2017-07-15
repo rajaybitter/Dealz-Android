@@ -4,74 +4,57 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.jm.jengo.dealz.R;
-import com.jm.jengo.dealz.fragments.TopDealsFragment.OnListFragmentInteractionListener;
+import com.jm.jengo.dealz.classes.SaleItem;
 
-import java.util.List;
+import java.util.ArrayList;
 
-/**
- * {@link RecyclerView.Adapter} that can display a {@link } and makes a call to the
- * specified {@link OnListFragmentInteractionListener}.
- * TODO: Replace the implementation with code for your data type.
- */
-public class TopDealsRecyclerViewAdapter extends RecyclerView.Adapter<TopDealsRecyclerViewAdapter.ViewHolder> {
+public class TopDealsRecyclerViewAdapter extends RecyclerView.Adapter<TopDealsRecyclerViewAdapter.Holder> {
 
-    private final List<Object> mValues;
-    private final OnListFragmentInteractionListener mListener;
+    private ArrayList<SaleItem> items;
 
-    public TopDealsRecyclerViewAdapter(List<Object> items, OnListFragmentInteractionListener listener) {
-        mValues = items;
-        mListener = listener;
+    public TopDealsRecyclerViewAdapter(ArrayList<SaleItem> items) {
+        this.items = items;
     }
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public Holder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.fragment_item, parent, false);
-        return new ViewHolder(view);
+                .inflate(R.layout.top_deal_item_layout, parent, false);
+        return new Holder(view);
     }
 
     @Override
-    public void onBindViewHolder(final ViewHolder holder, int position) {
-        //holder.mItem = mValues.get(position);
-        //holder.mIdView.setText(mValues.get(position).id);
-        //holder.mContentView.setText(mValues.get(position).content);
+    public void onAttachedToRecyclerView(RecyclerView recyclerView) {
+        super.onAttachedToRecyclerView(recyclerView);
+    }
 
-        holder.mView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (null != mListener) {
-                    // Notify the active callbacks interface (the activity, if the
-                    // fragment is attached to one) that an item has been selected.
-                    //mListener.onListFragmentInteraction(holder.mItem);
-                }
-            }
-        });
+    @Override
+    public void onBindViewHolder(final Holder holder, int position) {
+        SaleItem currentItem = items.get(position);
+        holder.name.setText(currentItem.getName());
+        Glide.with(holder.image.getContext())
+            .load(R.drawable.test_image)
+            .into(holder.image);
     }
 
     @Override
     public int getItemCount() {
-        return mValues.size();
+        return items.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        public final View mView;
-        public final TextView mIdView;
-        public final TextView mContentView;
-        //public DummyItem mItem;
+    public class Holder extends RecyclerView.ViewHolder{
+        public TextView name;
+        public ImageView image;
 
-        public ViewHolder(View view) {
-            super(view);
-            mView = view;
-            mIdView = (TextView) view.findViewById(R.id.id);
-            mContentView = (TextView) view.findViewById(R.id.content);
-        }
-
-        @Override
-        public String toString() {
-            return super.toString() + " '" + mContentView.getText() + "'";
+        public Holder(View itemView) {
+            super(itemView);
+            this.name = (TextView)itemView.findViewById(R.id.top_deals_name);
+            this.image = (ImageView)itemView.findViewById(R.id.top_deals_image);
         }
     }
 }

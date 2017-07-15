@@ -14,8 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/top_deals_image_height"
             android:scaleType="fitCenter"
-            android:id="@+id/top_deals_image"
-            android:src="@drawable/test_image"/>
+            android:id="@+id/top_deals_image"/>
 
         <android.support.v4.widget.Space
             android:layout_width="match_parent"
@@ -28,6 +27,7 @@
             tools:text="This is the item Name"
             android:textColor="@color/primary_text"
             android:maxLines="1"
+            android:layout_margin="5dp"
             android:ellipsize="end"
             android:textSize="@dimen/top_deal_name_text_size"/>
 
