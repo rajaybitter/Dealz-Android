@@ -17,7 +17,7 @@ public class ShopActivity extends AppCompatActivity {
 //        getSupportFragmentManager().beginTransaction()
 //                .replace(R.id.top_deals_container, new TopDealsFragment()).commit();
 
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.search_result_container, new HomeFragment()).commit();
+//        getSupportFragmentManager().beginTransaction()
+//                .replace(R.id.search_result_container, new HomeFragment()).commit();
     }
 }
