@@ -8,9 +8,13 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.jm.jengo.dealz.R;
+import com.jm.jengo.dealz.fragments.CartFragment;
+import com.jm.jengo.dealz.fragments.EditProfileFragment;
 import com.jm.jengo.dealz.fragments.HomeFragment;
+import com.jm.jengo.dealz.fragments.InboxFragment;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -51,7 +55,7 @@ public class HomeActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        /**if (id == R.id.nav_camera) {
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
 
@@ -59,14 +63,18 @@ public class HomeActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_manage) {
 
-        } else if (id == R.id.nav_inbox) {
-
+        } else **/ if (id == R.id.nav_inbox) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, new InboxFragment()).commit();
+            Toast.makeText(this, "This is the inbox fragment", Toast.LENGTH_LONG).show();
         } else if (id == R.id.nav_cart) {
-
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, new CartFragment()).commit();
         }else if (id == R.id.nav_store) {
 
         }else if (id == R.id.nav_edit) {
-
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, new EditProfileFragment()).commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
