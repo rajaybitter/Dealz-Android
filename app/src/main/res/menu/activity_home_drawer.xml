@@ -20,16 +20,24 @@
             android:title="Tools" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="@string/profile">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:id="@+id/nav_inbox"
+                android:icon="@drawable/ic_forum_black"
+                android:title="@string/navigation_drawer_inbox" />
             <item
-                android:id="@+id/nav_send"
+                android:id="@+id/nav_cart"
+                android:icon="@drawable/ic_shopping_cart"
+                android:title="@string/navigation_drawer_cart" />
+            <item
+                android:id="@+id/nav_store"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:title="@string/navigation_drawer_store" />
+            <item
+                android:id="@+id/nav_edit"
+                android:icon="@drawable/ic_account_circle"
+                android:title="@string/navigation_drawer_edit" />
         </menu>
     </item>
 

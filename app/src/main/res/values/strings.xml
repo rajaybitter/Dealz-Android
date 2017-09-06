@@ -9,7 +9,11 @@
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_drawer_inbox">Inbox</string>
+    <string name="navigation_drawer_cart">Shopping Cart</string>
+    <string name="navigation_drawer_edit">Edit</string>
+    <string name="navigation_drawer_store">Store</string>
 
-    <string name="action_settings">Settings</string>
-    <string name="title_activity_home">HomeActivity</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
