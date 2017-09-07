@@ -1,5 +1,6 @@
 package com.jm.jengo.dealz.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -71,7 +72,8 @@ public class HomeActivity extends AppCompatActivity
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fragment_container, new CartFragment()).commit();
         }else if (id == R.id.nav_store) {
-
+            Intent intent= new Intent(this, ProfileActivity.class);
+            startActivity(intent);
         }else if (id == R.id.nav_edit) {
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fragment_container, new EditProfileFragment()).commit();
