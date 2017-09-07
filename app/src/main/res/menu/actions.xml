@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/Cont_seller"
+        android:title="@string/contact_seller"
+        app:showAsAction="always" />
+    <!--android:icon="@drawable/"-->
+
+    <item android:id="@+id/create_invoice"
+        android:title="@string/create_invoice"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/ret_item"
+        android:title="Return Item"
+        app:showAsAction="always" />
+    <!--android:icon="@drawable/"-->
+
+    <item android:id="@+id/view_seller_store"
+        android:title="View Seller's Store"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/sell_this"
+        android:title="Sell Similar Item"
+        app:showAsAction="ifRoom" />
+    <!--android:icon="@drawable/"-->
+
+    <item android:id="@+id/view_similar_items"
+        android:title="View Similar Items"
+        app:showAsAction="ifRoom" />
+
+    <item android:id="@+id/order_details"
+        android:title="Order Details"
+        app:showAsAction="ifRoom" />
+    <!--android:icon="@drawable/ic_help" -->
+
+
+</menu>
