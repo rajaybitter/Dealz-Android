@@ -18,9 +18,9 @@ public class TopDealsFragment extends Fragment {
 
     private static final String TAG = "TopDealsFragment";
 
-    private ArrayList<SaleItem> tempData = new ArrayList<>();
-    private RecyclerView recyclerView;
-    private TopDealsRecyclerViewAdapter adapter;
+    private ArrayList<SaleItem> tempTopData = new ArrayList<>();
+    private RecyclerView topItemsRecyclerView;
+    private TopDealsRecyclerViewAdapter topItemsadapter;
 
     public TopDealsFragment() {
     }
@@ -35,28 +35,26 @@ public class TopDealsFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        tempData.add(new SaleItem("Car", 19.50f, "THis is a car"));
-        tempData.add(new SaleItem("Boat", 19.40f, "THis is a car"));
-        tempData.add(new SaleItem("Rat", 19.50f, "THis is a car"));
-        tempData.add(new SaleItem("Jims", 19.50f, "THis is a car"));
-        tempData.add(new SaleItem("Cops", 19.50f, "THis is a car"));
-        tempData.add(new SaleItem("Tanks", 19.70f, "THis is a car"));
-        tempData.add(new SaleItem("Romper", 19.90f, "THis is a car"));
-        tempData.add(new SaleItem("plomp", 19.51f, "THis is a car"));
-        tempData.add(new SaleItem("trunf", 19.60f, "THis is a car"));
-        tempData.add(new SaleItem("idk", 19.50f, "THis is a car"));
+        tempTopData.add(new SaleItem("Car", 19.50f, "THis is a car"));
+        tempTopData.add(new SaleItem("Boat", 19.40f, "THis is a car"));
+        tempTopData.add(new SaleItem("Rat", 19.50f, "THis is a car"));
+        tempTopData.add(new SaleItem("Jims", 19.50f, "THis is a car"));
+        tempTopData.add(new SaleItem("Cops", 19.50f, "THis is a car"));
+        tempTopData.add(new SaleItem("Tanks", 19.70f, "THis is a car"));
+        tempTopData.add(new SaleItem("Romper", 19.90f, "THis is a car"));
+        tempTopData.add(new SaleItem("plomp", 19.51f, "THis is a car"));
+        tempTopData.add(new SaleItem("trunf", 19.60f, "THis is a car"));
+        tempTopData.add(new SaleItem("idk", 19.50f, "THis is a car"));
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.top_deals_fragment, container, false);
-        recyclerView = (RecyclerView)view.findViewById(R.id.top_deals_layout);
-
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL,false));
-
-        adapter = new TopDealsRecyclerViewAdapter(tempData);
-        recyclerView.setAdapter(adapter);
+        View view = inflater.inflate(R.layout.fragment_top_deals, container, false);
+        topItemsRecyclerView = (RecyclerView)view.findViewById(R.id.top_deals_layout);
+        topItemsRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL,false));
+        topItemsadapter = new TopDealsRecyclerViewAdapter(tempTopData);
+        topItemsRecyclerView.setAdapter(topItemsadapter);
         return view;
     }
 
