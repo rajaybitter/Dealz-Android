@@ -12,6 +12,7 @@ import com.jm.jengo.dealz.R;
 import com.jm.jengo.dealz.classes.SaleItem;
 
 import java.util.ArrayList;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class TopDealsRecyclerViewAdapter extends RecyclerView.Adapter<TopDealsRecyclerViewAdapter.Holder> {
 
@@ -20,6 +21,9 @@ public class TopDealsRecyclerViewAdapter extends RecyclerView.Adapter<TopDealsRe
     public TopDealsRecyclerViewAdapter(ArrayList<SaleItem> items) {
         this.items = items;
     }
+
+    private int[] images = {R.drawable.car, R.drawable.fan, R.drawable.tang, R.drawable.test_image,
+                            R.drawable.piano, R.drawable.shirt, R.drawable.shoes};
 
     @Override
     public Holder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -36,10 +40,13 @@ public class TopDealsRecyclerViewAdapter extends RecyclerView.Adapter<TopDealsRe
     @Override
     public void onBindViewHolder(final Holder holder, int position) {
         SaleItem currentItem = items.get(position);
+        int index = ThreadLocalRandom.current().nextInt(0, 6);
         holder.name.setText(currentItem.getName());
+        holder.price.setText(String.valueOf(currentItem.getPrice()));
         Glide.with(holder.image.getContext())
-            .load(R.drawable.test_image)
+            .load(images[index])
             .into(holder.image);
+        //holder.image.setClipToOutline(true);
     }
 
     @Override
@@ -49,11 +56,13 @@ public class TopDealsRecyclerViewAdapter extends RecyclerView.Adapter<TopDealsRe
 
     public class Holder extends RecyclerView.ViewHolder{
         public TextView name;
+        public TextView price;
         public ImageView image;
 
         public Holder(View itemView) {
             super(itemView);
             this.name = (TextView)itemView.findViewById(R.id.top_deals_name);
+            this.price = (TextView)itemView.findViewById(R.id.top_deals_price);
             this.image = (ImageView)itemView.findViewById(R.id.top_deals_image);
         }
     }

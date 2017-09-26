@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="@dimen/top_deals_item_width"
-    android:layout_height="@dimen/top_deals_item_width"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_margin="@dimen/top_deals_item_margin">
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginRight="5dp"
+    android:background="@color/white"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,24 +16,36 @@
         <android.support.v7.widget.AppCompatImageView
             android:layout_width="match_parent"
             android:layout_height="@dimen/top_deals_image_height"
-            android:scaleType="fitCenter"
+            android:scaleType="fitXY"
+            android:background="@drawable/image_conrner_radius"
+            tools:src="@drawable/car"
             android:id="@+id/top_deals_image"/>
 
         <android.support.v4.widget.Space
             android:layout_width="match_parent"
-            android:layout_height="3dp" />
+            android:layout_height="1dp" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:id="@+id/top_deals_name"
+            tools:text="This is  \n dfdsfdsad"
+            android:textColor="@color/primary_text"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textSize="@dimen/top_deal_name_text_size"/>
 
         <android.support.v7.widget.AppCompatTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/top_deals_name"
-            tools:text="This is the item Name"
+            android:layout_gravity="end"
+            android:id="@+id/top_deals_price"
+            tools:text="$9.99"
             android:textColor="@color/primary_text"
             android:maxLines="1"
             android:layout_margin="5dp"
-            android:ellipsize="end"
-            android:textSize="@dimen/top_deal_name_text_size"/>
+            android:textSize="14sp"/>
 
     </LinearLayout>
 
-</android.support.v7.widget.CardView>
+</LinearLayout>

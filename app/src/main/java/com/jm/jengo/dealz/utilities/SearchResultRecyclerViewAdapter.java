@@ -24,6 +24,9 @@ public class SearchResultRecyclerViewAdapter extends RecyclerView.Adapter<Search
         this.items = items;
     }
 
+    private int[] images = {R.drawable.car, R.drawable.fan, R.drawable.tang, R.drawable.test_image,
+            R.drawable.piano, R.drawable.shirt, R.drawable.shoes};
+
     @Override
     public Holder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())

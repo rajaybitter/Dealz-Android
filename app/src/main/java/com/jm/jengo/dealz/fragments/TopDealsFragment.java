@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 
 import com.jm.jengo.dealz.R;
 import com.jm.jengo.dealz.classes.SaleItem;
+import com.jm.jengo.dealz.utilities.SimpleDividerItemDecoration;
 import com.jm.jengo.dealz.utilities.TopDealsRecyclerViewAdapter;
 
 import java.util.ArrayList;
@@ -55,6 +56,7 @@ public class TopDealsFragment extends Fragment {
         topItemsRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL,false));
         topItemsadapter = new TopDealsRecyclerViewAdapter(tempTopData);
         topItemsRecyclerView.setAdapter(topItemsadapter);
+        topItemsRecyclerView.addItemDecoration(new SimpleDividerItemDecoration(getContext()));
         return view;
     }
 

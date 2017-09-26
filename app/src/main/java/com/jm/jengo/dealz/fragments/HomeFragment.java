@@ -34,33 +34,9 @@ public class HomeFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        tempSearchData.add(new SaleItem("Car", 19.50f, "THis is a car"));
-        tempSearchData.add(new SaleItem("Boat", 19.40f, "THis is a car"));
-        tempSearchData.add(new SaleItem("Rat", 19.50f, "THis is a car"));
-        tempSearchData.add(new SaleItem("Jims", 19.50f, "THis is a car"));
-        tempSearchData.add(new SaleItem("Cops", 19.50f, "THis is a car"));
-        tempSearchData.add(new SaleItem("Tanks", 19.70f, "THis is a car"));
-        tempSearchData.add(new SaleItem("Romper", 19.90f, "THis is a car"));
-        tempSearchData.add(new SaleItem("plomp", 19.51f, "THis is a car"));
-        tempSearchData.add(new SaleItem("trunf", 19.60f, "THis is a car"));
-        tempSearchData.add(new SaleItem("idk", 19.50f, "THis is a car"));
-        tempSearchData.add(new SaleItem("Cops", 19.50f, "THis is a car"));
-        tempSearchData.add(new SaleItem("Tanks", 19.70f, "THis is a car"));
-        tempSearchData.add(new SaleItem("Romper", 19.90f, "THis is a car"));
-        tempSearchData.add(new SaleItem("Boat", 19.40f, "THis is a car"));
-        tempSearchData.add(new SaleItem("Rat", 19.50f, "THis is a car"));
-        tempSearchData.add(new SaleItem("Jims", 19.50f, "THis is a car"));
-        tempSearchData.add(new SaleItem("Cops", 19.50f, "THis is a car"));
-        tempSearchData.add(new SaleItem("Tanks", 19.70f, "THis is a car"));
-        tempSearchData.add(new SaleItem("Romper", 19.90f, "THis is a car"));
-        tempSearchData.add(new SaleItem("plomp", 19.51f, "THis is a car"));
-        tempSearchData.add(new SaleItem("Car", 19.50f, "THis is a car"));
-        tempSearchData.add(new SaleItem("Boat", 19.40f, "THis is a car"));
-        tempSearchData.add(new SaleItem("Rat", 19.50f, "THis is a car"));
-        tempSearchData.add(new SaleItem("Jims", 19.50f, "THis is a car"));
-        tempSearchData.add(new SaleItem("Cops", 19.50f, "THis is a car"));
-        tempSearchData.add(new SaleItem("Tanks", 19.70f, "THis is a car"));
-        tempSearchData.add(new SaleItem("Romper", 19.90f, "THis is a car"));
+        tempSearchData.add(new SaleItem("Car", 19.50f, "This is a car"));
+        tempSearchData.add(new SaleItem("Car", 19.50f, "This is a car"));
+
 
         tempTopData.add(new SaleItem("Car", 19.50f, "THis is a car"));
         tempTopData.add(new SaleItem("Boat", 19.40f, "THis is a car"));
