@@ -36,6 +36,22 @@ public class HomeFragment extends Fragment {
         super.onCreate(savedInstanceState);
         tempSearchData.add(new SaleItem("Car", 19.50f, "This is a car"));
         tempSearchData.add(new SaleItem("Car", 19.50f, "This is a car"));
+        tempSearchData.add(new SaleItem("Car", 19.50f, "This is a car"));
+        tempSearchData.add(new SaleItem("Car", 19.50f, "This is a car"));
+        tempSearchData.add(new SaleItem("Car", 19.50f, "This is a car"));
+        tempSearchData.add(new SaleItem("Car", 19.50f, "This is a car"));
+        tempSearchData.add(new SaleItem("Car", 19.50f, "This is a car"));
+        tempSearchData.add(new SaleItem("Car", 19.50f, "This is a car"));
+        tempSearchData.add(new SaleItem("Car", 19.50f, "This is a car"));
+        tempSearchData.add(new SaleItem("Car", 19.50f, "This is a car"));
+        tempSearchData.add(new SaleItem("Car", 19.50f, "This is a car"));
+        tempSearchData.add(new SaleItem("Car", 19.50f, "This is a car"));
+        tempSearchData.add(new SaleItem("Car", 19.50f, "This is a car"));
+        tempSearchData.add(new SaleItem("Car", 19.50f, "This is a car"));
+        tempSearchData.add(new SaleItem("Car", 19.50f, "This is a car"));
+        tempSearchData.add(new SaleItem("Car", 19.50f, "This is a car"));
+        tempSearchData.add(new SaleItem("Car", 19.50f, "This is a car"));
+        tempSearchData.add(new SaleItem("Car", 19.50f, "This is a car"));
 
 
         tempTopData.add(new SaleItem("Car", 19.50f, "THis is a car"));

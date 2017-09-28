@@ -15,6 +15,7 @@ import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class SearchResultRecyclerViewAdapter extends RecyclerView.Adapter<SearchResultRecyclerViewAdapter.Holder> {
 
@@ -37,11 +38,12 @@ public class SearchResultRecyclerViewAdapter extends RecyclerView.Adapter<Search
     @Override
     public void onBindViewHolder(final Holder holder, int position) {
         SaleItem currentItem = items.get(position);
+        int index = ThreadLocalRandom.current().nextInt(0, 6);
         holder.name.setText(currentItem.getName());
         holder.price.setText( String.valueOf(currentItem.getPrice()) );
         holder.description.setText(currentItem.getDescription());
         Glide.with(holder.image.getContext())
-                .load(R.drawable.test_image)
+                .load(images[index])
                 .into(holder.image);
     }
 
