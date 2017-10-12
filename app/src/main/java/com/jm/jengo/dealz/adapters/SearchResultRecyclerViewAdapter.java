@@ -1,4 +1,4 @@
-package com.jm.jengo.dealz.utilities;
+package com.jm.jengo.dealz.adapters;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -14,27 +14,22 @@ import com.jm.jengo.dealz.classes.SaleItem;
 import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class TopDealsRecyclerViewAdapter extends RecyclerView.Adapter<TopDealsRecyclerViewAdapter.Holder> {
+public class SearchResultRecyclerViewAdapter extends RecyclerView.Adapter<SearchResultRecyclerViewAdapter.Holder> {
 
     private ArrayList<SaleItem> items;
 
-    public TopDealsRecyclerViewAdapter(ArrayList<SaleItem> items) {
+    public SearchResultRecyclerViewAdapter(ArrayList<SaleItem> items) {
         this.items = items;
     }
 
     private int[] images = {R.drawable.car, R.drawable.fan, R.drawable.tang, R.drawable.test_image,
-                            R.drawable.piano, R.drawable.shirt, R.drawable.shoes};
+            R.drawable.piano, R.drawable.shirt, R.drawable.shoes};
 
     @Override
     public Holder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.top_deal_item_layout, parent, false);
+                .inflate(R.layout.search_item_layout, parent, false);
         return new Holder(view);
-    }
-
-    @Override
-    public void onAttachedToRecyclerView(RecyclerView recyclerView) {
-        super.onAttachedToRecyclerView(recyclerView);
     }
 
     @Override
@@ -42,11 +37,11 @@ public class TopDealsRecyclerViewAdapter extends RecyclerView.Adapter<TopDealsRe
         SaleItem currentItem = items.get(position);
         int index = ThreadLocalRandom.current().nextInt(0, 6);
         holder.name.setText(currentItem.getName());
-        holder.price.setText(String.valueOf(currentItem.getPrice()));
+        holder.price.setText( String.valueOf(currentItem.getPrice()) );
+        holder.description.setText(currentItem.getDescription());
         Glide.with(holder.image.getContext())
-            .load(images[index])
-            .into(holder.image);
-        //holder.image.setClipToOutline(true);
+                .load(images[index])
+                .into(holder.image);
     }
 
     @Override
@@ -54,16 +49,23 @@ public class TopDealsRecyclerViewAdapter extends RecyclerView.Adapter<TopDealsRe
         return items.size();
     }
 
-    public class Holder extends RecyclerView.ViewHolder{
-        public TextView name;
-        public TextView price;
-        public ImageView image;
+    @Override
+    public void onAttachedToRecyclerView(RecyclerView recyclerView) {
+        super.onAttachedToRecyclerView(recyclerView);
+    }
 
-        public Holder(View itemView) {
-            super(itemView);
-            this.name = (TextView)itemView.findViewById(R.id.top_deals_name);
-            this.price = (TextView)itemView.findViewById(R.id.top_deals_price);
-            this.image = (ImageView)itemView.findViewById(R.id.top_deals_image);
+    public class Holder extends RecyclerView.ViewHolder {
+        public ImageView image;
+        public TextView name;
+        public TextView description;
+        public TextView price;
+
+        public Holder(View view) {
+            super(view);
+            image = (ImageView)view.findViewById(R.id.search_item_image);
+            name = (TextView)view.findViewById(R.id.search_item_name);
+            description = (TextView)view.findViewById(R.id.search_item_description);
+            price = (TextView)view.findViewById(R.id.search_item_price);
         }
     }
 }

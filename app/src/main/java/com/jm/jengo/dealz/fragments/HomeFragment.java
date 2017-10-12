@@ -10,8 +10,8 @@ import android.view.ViewGroup;
 
 import com.jm.jengo.dealz.R;
 import com.jm.jengo.dealz.classes.SaleItem;
-import com.jm.jengo.dealz.utilities.SearchResultRecyclerViewAdapter;
-import com.jm.jengo.dealz.utilities.TopDealsRecyclerViewAdapter;
+import com.jm.jengo.dealz.adapters.SearchResultRecyclerViewAdapter;
+import com.jm.jengo.dealz.adapters.TopDealsRecyclerViewAdapter;
 
 import java.util.ArrayList;
 
